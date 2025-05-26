@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "orders",
+  "info": {
+    "singularName": "order",
+    "pluralName": "orders",
+    "displayName": "Pedidos"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "client_name": {
+      "type": "string"
+    },
+    "product": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::product.product",
+      "inversedBy": "orders"
+    }
+  }
+}

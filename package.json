@@ -1,0 +1,31 @@
+{
+  "name": "headless-cms-playground",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "cms": "npm exec --workspace=coffee-cms",
+    "dev:cms": "npm run cms -- npm run develop",
+    "build:cms": "npm run cms -- npm run build",
+    "front": "npm exec --workspace=cafeteria-frontend",
+    "dev:front": "npm run front -- npm run dev",
+    "dev": "concurrently -c red,blue -n 'cms','front' 'npm run dev:cms' 'npm run dev:front' "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alfredots/headless-cms-playground.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alfredots/headless-cms-playground/issues"
+  },
+  "homepage": "https://github.com/alfredots/headless-cms-playground#readme",
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
